@@ -1,0 +1,16 @@
+<section class="destinations-area section-gap">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="menu-content pb-40 col-lg-8">
+            <div class="title text-center">
+                <h1 class="mb-10"><%= t ".featured" %> <%= @location_type.name %> <%= t ".destinations" %></h1>
+                <p><%= t ".check_out" %> <%= @location_type.name %></p>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+      <%= render @locations %>
+    </div>
+    <%= paginate @locations %>
+  </div>
+</section>

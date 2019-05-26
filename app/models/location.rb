@@ -1,5 +1,6 @@
 class Location < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  has_many :reservations, dependent: :destroy
   has_many :rooms, dependent: :destroy
   has_many :images, as: :imageable, dependent: :destroy
   belongs_to :user
@@ -44,4 +45,13 @@ class Location < ApplicationRecord
       OR (capacity_used < (total_capacity - #{peoples}) AND rooms_used < (total_rooms - #{rooms}))
       "
   end)
+
+  def get_reservation_data
+    data = []
+    7.times do |time|
+      count = reservations.where("created_at >= ? AND created_at < ?", time.days.ago.to_date, (time-1).days.ago.to_date).size
+      data << {y: "#{time.days.ago.to_date}", a: count}
+    end
+    return data
+  end
 end

@@ -32,6 +32,10 @@ class Room < ApplicationRecord
       :updated_at, :status, :price_currency
   end)
 
+  ransacker :price, type: :integer, formatter: proc { |dollars| dollars * 100 } do |p|
+    p.table[:price_cents]
+  end
+
   private
   def total_capacity_and_total_rooms_caculate
     total_capacity = location.rooms.sum("occupancy_limit * quantity")

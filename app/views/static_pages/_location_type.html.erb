@@ -11,7 +11,7 @@
             <div class="active-recent-blog-carusel">
                 <% @location_types.each do |location_type| %>
                 <div class="single-recent-blog-post item">
-                    <%= link_to "#", class: "thumb" do %>
+                    <%= link_to location_type_path(location_type) , class: "thumb" do %>
                         <%= image_tag location_type.pictures[Settings.static_pages.location.number_of_pictures].url ,class: "d-block w-100" if
                         location_type.pictures.length > Settings.static_pages.location.number_of_pictures %>
                     <% end %>

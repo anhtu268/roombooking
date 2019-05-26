@@ -26,8 +26,11 @@ end
 names = ["Apartments", "Resorts", "Villas", "Cabins", "Cottages", "Glamping", "Serviced",
   "Vacation Homes", "Guest houses", "Hostels", "Motels", "B&Bs", "Ryokans", "Riads",
   "Resort Villages", "Homestays", "Campgrounds"]
-names.each do |name|
-  LocationType.create!(name: name)
+names.each_with_index do |name, index|
+  LocationType.create!(name: name,
+    pictures: [
+        File.open(Rails.root + "vendor/assets/images/seeds/location_type/#{index+1}.jpg")
+    ])
 end
 
 # Services
@@ -54,8 +57,13 @@ users = User.all
       description: description,
       location_type_id: location_type_id,
       status: true,
-      pictures: [File.open(Rails.root + "vendor/assets/images/seeds/#{rand 1..3}.jpg")]
-      )
+      pictures: [
+        File.open(Rails.root + "vendor/assets/images/seeds/location/#{rand 1..12}.jpg"),
+        File.open(Rails.root + "vendor/assets/images/seeds/location/#{rand 1..12}.jpg"),
+        File.open(Rails.root + "vendor/assets/images/seeds/location/#{rand 1..12}.jpg"),
+        File.open(Rails.root + "vendor/assets/images/seeds/location/#{rand 1..12}.jpg"),
+        File.open(Rails.root + "vendor/assets/images/seeds/location/#{rand 1..12}.jpg")
+      ])
   end
 end
 
@@ -100,8 +108,13 @@ locations = Location.all
       quantity: quantity,
       price: price,
       bed_detail_id: bed_detail_id,
-      pictures: [File.open(Rails.root + "vendor/assets/images/seeds/#{rand 1..3}.jpg")]
-      )
+      pictures: [
+        File.open(Rails.root + "vendor/assets/images/seeds/room/#{rand 1..12}.jpg"),
+        File.open(Rails.root + "vendor/assets/images/seeds/room/#{rand 1..12}.jpg"),
+        File.open(Rails.root + "vendor/assets/images/seeds/room/#{rand 1..12}.jpg"),
+        File.open(Rails.root + "vendor/assets/images/seeds/room/#{rand 1..12}.jpg"),
+        File.open(Rails.root + "vendor/assets/images/seeds/room/#{rand 1..12}.jpg")
+      ])
   end
 end
 

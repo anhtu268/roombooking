@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  resources :location_types, only: %i(show)
 
   namespace :admin do
     resources(:users){get "search", on: :collection}
@@ -54,6 +54,7 @@ Rails.application.routes.draw do
         get "search", on: :collection
         resources(:reservation_details, only: :index){get "search", on: :collection}
       end
+      post "reservations", on: :member, to: "reservations#get_data"
     end
   end
 end

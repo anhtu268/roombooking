@@ -396,6 +396,8 @@ en:
         enter_zip_code: "Enter Zip Code"
         enter_description: "Enter description"
         enter_status: "Enter status"
+    reservations:
+      location_not_found: "Location not found"
 
   locations:
     show:
@@ -431,20 +433,35 @@ en:
       remove_my_review: "Remove My Review"
       are_you_sure: "Are you sure?"
 
+  location_types:
+    show:
+      popular_destinations: "Popular Destinations"
+      we_all: "We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to."
+      check_out: "Check out these popular destinations for"
+      featured: "Featured"
+      destinations: "Destinations"
   users:
     show:
       reviews: "Reviews"
 
   reservations:
-      create:
-        created: "Book room success, You have 24 hours to pay the bill before being refused!"
-      form:
-        room_name: "Room Type"
-        occupancy_limit: "Capacity"
-        price_for: "Price for "
-        night: " Night"
-        select_rooms: "Select Rooms"
-        book_submit: "Book now"
+    create:
+      created: "Book room success, You have 24 hours to pay the bill before being refused!"
+    form:
+      room_name: "Room Type"
+      occupancy_limit: "Capacity"
+      price_for: "Price for "
+      night: " Night"
+      select_rooms: "Select Rooms"
+      book_submit: "Book now"
+    index:
+      reservations: "Reservations"
+      id: "Id"
+      user: "User"
+      total_bill: "Total Bill"
+      status: "Status"
+      create_at: "Create at"
+      update_at: "Update at"
 
   reservation_details:
     model:

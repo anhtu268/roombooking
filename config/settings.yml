@@ -43,6 +43,9 @@ controllers:
       page: 5
     locations:
       page: 5
+    reservations:
+      page: 10
+      status: 2
   locations:
     pag: 9
   static_pages:

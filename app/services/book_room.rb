@@ -24,7 +24,7 @@ class BookRoom
   private
   def do_transaction
     ActiveRecord::Base.transaction do
-      @reservation = @user.reservations.create!
+      @reservation = @user.reservations.create!(location_id: @location_id)
       create_reservation_details
       caculate_total_bill @reservation
       @reservation.update! total_bill: @total_bill

@@ -13,7 +13,7 @@ $(function(){
     }
   });
 
-  $(".ui-widget-header").css('background', '#00A699');
+  $(".ui-widget-header").css('background', '#38a4ff');
   $(".ui-state-default, .ui-widget-content").css('background', 'white');
-  $(".ui-state-default, .ui-widget-content").css('border-color', '#00A699');
+  $(".ui-state-default, .ui-widget-content").css('border-color', '#38a4ff');
 })

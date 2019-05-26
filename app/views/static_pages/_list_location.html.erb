@@ -19,7 +19,7 @@
                 <div class="d-flex pb-3 ml-1" id="stars_<%= location.id %>">
                 </div>
               </span>
-              <div class="badge badge-primary">
+              <div class="badge badge-warning">
                 <h4><span><%= location.total_rate %></span></h4>
               </div>
             </h4>
@@ -40,12 +40,12 @@
                   <td><%= link_to room.name, location_room_path(location, room) %></td>
                   <td><%= room.occupancy_limit %></td>
                   <td><%= room.quantity %></td>
-                  <td><%= room.price %></td>
+                  <td>$<%= room.price %></td>
                 </tr>
                 <% end %>
               </tbody>
             </table>
-            <span class="pull-right"><%= link_to t(".see_availability"), location_path(location),class: "btn btn-primary" %></span>
+            <span class="pull-right"><%= link_to t(".see_availability"), location_path(location),class: "genric-btn info" %></span>
           </div>
         </div>
       </div>
