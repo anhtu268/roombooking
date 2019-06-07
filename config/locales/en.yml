@@ -380,7 +380,7 @@ en:
         form_name: "Name"
         form_location_type: "Location type"
         form_user_id: "User ID"
-        form_location: "Location"
+        form_address: "Address"
         form_national: "National"
         form_zip_code: "Zip Code"
         form_description: "Description"
@@ -398,6 +398,14 @@ en:
         enter_status: "Enter status"
     reservations:
       location_not_found: "Location not found"
+      index:
+        reservations: "Reservations"
+        id: "Id"
+        user: "User"
+        total_bill: "Total Bill"
+        status: "Status"
+        create_at: "Create at"
+        update_at: "Update at"
 
   locations:
     show:
@@ -432,6 +440,9 @@ en:
       there_is_no_review: "There is no Review yet"
       remove_my_review: "Remove My Review"
       are_you_sure: "Are you sure?"
+    create:
+      created: "Create review success"
+      create_unsuccess: "Create review unsuccess"
 
   location_types:
     show:
@@ -454,14 +465,6 @@ en:
       night: " Night"
       select_rooms: "Select Rooms"
       book_submit: "Book now"
-    index:
-      reservations: "Reservations"
-      id: "Id"
-      user: "User"
-      total_bill: "Total Bill"
-      status: "Status"
-      create_at: "Create at"
-      update_at: "Update at"
 
   reservation_details:
     model:

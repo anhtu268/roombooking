@@ -10,6 +10,9 @@ class Location < ApplicationRecord
 
   mount_uploaders :pictures, PictureUploader
 
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj){ obj.address.present? && obj.address_changed? }
+
   validates_presence_of :name, :address, :national, :zip_code, :description
 
   LOCATION_PARAMS = [:name, :address, :national, :zip_code, :description, :status, :location_type_id, :user_id, :created_at, :updated_at, pictures: []].freeze

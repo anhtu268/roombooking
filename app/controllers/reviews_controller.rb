@@ -4,7 +4,13 @@ class ReviewsController < ApplicationController
 
   def create
     @review = current_user.reviews.create(review_params)
-    redirect_to @review.location
+    if @review.save
+      flash[:success] = t(".created")
+      redirect_to @review.location
+    else
+      flash[:error] = t(".create_unsuccess")
+      redirect_to @review.location
+    end
   end
 
   def destroy
