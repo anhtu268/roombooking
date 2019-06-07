@@ -10,8 +10,8 @@
     <%= f.select :location_type_id, @location.location_type_option, { include_blank: true }, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :location, t(".form_location")%>
-    <%= f.text_field :location, class: "form-control", placeholder: t(".enter_location") %>
+    <%= f.label :address, t(".form_address")%>
+    <%= f.text_field :address, class: "form-control", placeholder: t(".enter_address") %>
   </div>
   <div class="form-group">
     <%= f.label :national, t(".form_national")%>

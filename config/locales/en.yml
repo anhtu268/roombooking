@@ -391,7 +391,7 @@ en:
         enter_name: "Enter name"
         enter_location_type_id: "Enter location type id"
         enter_user_id: "Enter user id"
-        enter_location: "Enter location"
+        enter_address: "Enter address"
         enter_national: "Enter national"
         enter_zip_code: "Enter Zip Code"
         enter_description: "Enter description"

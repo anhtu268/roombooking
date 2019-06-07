@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: %i(create)
   before_action :load_review, only: %i(destroy)
 
   def create
