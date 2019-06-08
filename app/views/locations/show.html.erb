@@ -1,3 +1,4 @@
+<%= provide :js, "locations" %>
 <section class="sample-text-area">
   <div class="container">
     <h3>
@@ -93,4 +94,3 @@
   </div>
 </section>
 <%= content_tag :div, nil, id: "mydata1", data: {review: @location.reviews} %>
-<%= javascript_include_tag "locations" %>

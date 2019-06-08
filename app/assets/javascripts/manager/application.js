@@ -26,6 +26,8 @@
 //= require admin/shared/light-gallery
 //= require admin/shared/widgets
 //= require admin/shared/todo
+//= require morris
+//= require raphael
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
@@ -33,4 +35,3 @@
 //= require activestorage
 //= require turbolinks
 //= require cable
-

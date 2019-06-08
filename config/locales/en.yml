@@ -380,7 +380,7 @@ en:
         form_name: "Name"
         form_location_type: "Location type"
         form_user_id: "User ID"
-        form_location: "Location"
+        form_address: "Address"
         form_national: "National"
         form_zip_code: "Zip Code"
         form_description: "Description"
@@ -391,11 +391,21 @@ en:
         enter_name: "Enter name"
         enter_location_type_id: "Enter location type id"
         enter_user_id: "Enter user id"
-        enter_location: "Enter location"
+        enter_address: "Enter address"
         enter_national: "Enter national"
         enter_zip_code: "Enter Zip Code"
         enter_description: "Enter description"
         enter_status: "Enter status"
+    reservations:
+      location_not_found: "Location not found"
+      index:
+        reservations: "Reservations"
+        id: "Id"
+        user: "User"
+        total_bill: "Total Bill"
+        status: "Status"
+        create_at: "Create at"
+        update_at: "Update at"
 
   locations:
     show:
@@ -430,21 +440,31 @@ en:
       there_is_no_review: "There is no Review yet"
       remove_my_review: "Remove My Review"
       are_you_sure: "Are you sure?"
+    create:
+      created: "Create review success"
+      create_unsuccess: "Create review unsuccess"
 
+  location_types:
+    show:
+      popular_destinations: "Popular Destinations"
+      we_all: "We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to."
+      check_out: "Check out these popular destinations for"
+      featured: "Featured"
+      destinations: "Destinations"
   users:
     show:
       reviews: "Reviews"
 
   reservations:
-      create:
-        created: "Book room success, You have 24 hours to pay the bill before being refused!"
-      form:
-        room_name: "Room Type"
-        occupancy_limit: "Capacity"
-        price_for: "Price for "
-        night: " Night"
-        select_rooms: "Select Rooms"
-        book_submit: "Book now"
+    create:
+      created: "Book room success, You have 24 hours to pay the bill before being refused!"
+    form:
+      room_name: "Room Type"
+      occupancy_limit: "Capacity"
+      price_for: "Price for "
+      night: " Night"
+      select_rooms: "Select Rooms"
+      book_submit: "Book now"
 
   reservation_details:
     model:

@@ -36,3 +36,5 @@
 //= require daterangepicker
 //= require daterange
 //= require search.js
+//= require raphael
+//= require morris
