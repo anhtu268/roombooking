@@ -4,7 +4,7 @@ class Manager::LocationsController < Manager::ApplicationController
   def show; end
 
   def new
-    @location = Location.new
+    @location = Location.new.decorate
   end
 
   def create
@@ -40,7 +40,7 @@ class Manager::LocationsController < Manager::ApplicationController
   end
 
   def load_location
-    @location = Location.find_by id: params[:id]
+    @location = Location.find_by(id: params[:id]).decorate
     return if @location
     flash[:error] = t(".location_not_found")
     redirect_to manager_root_path

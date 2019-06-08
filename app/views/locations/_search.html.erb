@@ -3,7 +3,7 @@
     <div class="row align-items-center justify-content-center">
       <div class="col-12 mt-10">
         <%= search_form_for @search, class: "d-flex" do |f| %>
-          <%= f.search_field :national_or_location_cont, placeholder: t(".location"),
+          <%= f.search_field :national_or_address_cont, placeholder: t(".location"),
             class: "single-input-primary m-1", required: true %>
           <%= search_field_tag "q[have_rooms_fit_with][range]", nil, class: "single-input-primary m-1 daterange", required: true %>
           <%= number_field_tag "q[have_rooms_fit_with][peoples]", nil, class: "single-input-primary m-1", placeholder: t(".no_peoples"),

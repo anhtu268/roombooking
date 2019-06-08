@@ -28,8 +28,8 @@ class Room < ApplicationRecord
   scope :by_location_id, -> (location_id){ where("location_id = ?", location_id) }
 
   scope :list, (lambda do
-    select :id, :name, :occupancy_limit, :quantity, :price, :created_at,
-      :updated_at, :status
+    select :id, :name, :occupancy_limit, :quantity, :price_cents, :created_at,
+      :updated_at, :status, :price_currency
   end)
 
   private

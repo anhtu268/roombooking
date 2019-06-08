@@ -41,14 +41,14 @@ users = User.all
 3.times do |n|
   users.each do |user|
     name = FFaker::Company.name << " - #{rand(1..100)}"
-    location = FFaker::AddressFR.full_address
+    address = FFaker::AddressFR.full_address
     national = FFaker::AddressUS.country
     zip_code = FFaker::AddressUS.zip_code
     description = FFaker::Book.description
     location_type_id = LocationType.all.sample.id
     status = true
     user.locations.create!(name: name,
-      location: location,
+      address: address,
       national: national,
       zip_code: zip_code,
       description: description,

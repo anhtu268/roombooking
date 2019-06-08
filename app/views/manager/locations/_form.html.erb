@@ -37,5 +37,5 @@
     </div>
   </div>
     <%= f.button yield(:button_text), class: "btn btn-success mr-2" %>
-    <%= link_to t(".form_cancel"), request.referer, class: "btn btn-light" %>
+    <%= link_to t(".form_cancel"), :back, class: "btn btn-light" %>
 <% end %>

@@ -3,7 +3,7 @@ class Manager::RoomsController < Manager::ApplicationController
   before_action :load_room, except: %i(new index create search)
 
   def index
-    @rooms = @location.rooms.list.page(params[:page]).per Settings.page
+    @rooms = @location.rooms.list.page(params[:page]).per(Settings.page).decorate
   end
 
   def show; end
@@ -52,14 +52,14 @@ class Manager::RoomsController < Manager::ApplicationController
   end
 
   def load_location
-    @location = Location.find_by id: params[:location_id]
+    @location = Location.find_by(id: params[:location_id]).decorate
     return if @location
     flash[:error] = t(".location_not_found")
     redirect_to manager_locations_path
   end
 
   def load_room
-    @room = @location.rooms.find_by id: params[:id]
+    @room = @location.rooms.find_by(id: params[:id]).decorate
     return if @room
     flash[:error] = t(".room_not_found")
     redirect_to manager_location_rooms_path

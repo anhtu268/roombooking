@@ -6,8 +6,8 @@ class RoomDecorator < ApplicationDecorator
   end
 
   def status_tag
-    return {name: t("decorators.room.activated"),class: "badge badge-success"} if status
-    {name: t("decorators.room.non_activated"),class: "badge badge-dark"}
+    return {name: I18n.t("decorators.room.activated"),class: "badge badge-success"} if status
+    {name: I18n.t("decorators.room.non_activated"),class: "badge badge-dark"}
   end
 
   def bed_detail_option
