@@ -9,12 +9,12 @@ class Location < ApplicationRecord
 
   mount_uploaders :pictures, PictureUploader
 
-  validates_presence_of :name, :location, :national, :zip_code, :description
+  validates_presence_of :name, :address, :national, :zip_code, :description
 
-  LOCATION_PARAMS = [:name, :location, :national, :zip_code, :description, :status, :location_type_id, :user_id, :created_at, :updated_at, pictures: []].freeze
+  LOCATION_PARAMS = [:name, :address, :national, :zip_code, :description, :status, :location_type_id, :user_id, :created_at, :updated_at, pictures: []].freeze
 
   scope :list, (lambda do
-    select :id, :name, :location, :national, :zip_code,
+    select :id, :name, :address, :national, :zip_code,
       :description, :status, :location_type_id, :user_id, :created_at, :updated_at
   end)
 
