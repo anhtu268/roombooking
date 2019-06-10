@@ -12,7 +12,9 @@
             in: 1..30, required: true %>
           <% if params[:q] %>
             <% params[:q].each do |key,value| %>
-              <%= hidden_field_tag key, value %>
+              <% if key != "have_rooms_fit_with" && key != "national_or_address_cont" %>
+                <%= hidden_field_tag key, value %>
+              <% end %>
             <% end %>
           <% end %>
           <%= f.submit "search", class: "genric-btn primary" %>

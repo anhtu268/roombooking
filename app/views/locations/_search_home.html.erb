@@ -21,8 +21,13 @@
     </div>
   </div>
   <% if params[:q] %>
-    <% params[:q].each do |key,value| %>
-      <%= hidden_field_tag key, value %>
+    <% if params[:q][:have_rooms_fit_with] %>
+      <% params[:q][:have_rooms_fit_with].each do |key, value| %>
+        <%= hidden_field_tag "q[have_rooms_fit_with][#{key}]", value %>
+      <% end %>
+    <% end %>
+    <% if params[:q][:national_or_address_cont] %>
+      <%= hidden_field_tag "q[national_or_address_cont]", params[:q][:national_or_address_cont] %>
     <% end %>
   <% end %>
 <% end %>

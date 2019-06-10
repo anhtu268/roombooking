@@ -16,7 +16,9 @@
   <div class="container main-menu">
     <div class="row align-items-center justify-content-between d-flex">
         <div id="logo">
-          <a href="index.html"><%= image_tag "admin/logo.png", alt: t(".alt_logo") %></a>
+          <%= link_to root_path do %>
+            <%= image_tag "admin/logo.png", alt: t(".alt_logo") %>
+          <% end %>
         </div>
         <nav id="nav-menu-container">
           <ul class="nav-menu">

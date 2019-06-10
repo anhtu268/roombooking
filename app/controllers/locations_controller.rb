@@ -22,8 +22,7 @@ class LocationsController < ApplicationController
 
   def ransack_result
     if params[:q] && params[:q][:have_rooms_fit_with]
-      Kaminari.paginate_array(@search.result.have_rooms_fit_with(params[:q][:have_rooms_fit_with]))
-        .page(params[:page]).per(Settings.controllers.locations.pag)
+      Location.have_rooms_fit_with(params[:q][:have_rooms_fit_with]).ransack(params[:q]).result.page(params[:page]).per(Settings.controllers.locations.pag)
     else
       @search.result.order(total_rate: :desc)
         .page(params[:page]).per(Settings.controllers.locations.pag)
