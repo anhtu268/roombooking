@@ -108,7 +108,7 @@
               </div>
             </div>
             <hr>
-            <%= link_to t(".book_now"), new_location_reservation_path, class: "genric-btn primary" %>
+            <%= link_to t(".book_now"), new_location_reservation_path(params.permit(q: {})), class: "genric-btn primary" %>
             <p><%= t ".you_won_be" %></p>
           </form>
           </div>

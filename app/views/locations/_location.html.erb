@@ -1,22 +1,53 @@
-<div class="col-lg-4">
-  <div class="single-destinations">
-    <div class="thumb">
-      <%= image_tag location.pictures[0].url if
-      location.pictures.length > 0 %>
+<div class="card p-4 mb-4">
+  <div class="row align-items-center justify-content-end">
+    <div class="col-lg-5 ">
+      <div class="thumb">
+    <%= image_tag location.pictures[Settings.static_pages.location.number_of_pictures].url ,class: "d-block w-100" if
+    location.pictures.length > Settings.static_pages.location.number_of_pictures %>
+      </div>
     </div>
-    <div class="details">
-      <h4 class="d-flex justify-content-between">
-        <span><%= location.name %></span>
-        <span><%= location.total_rate %></span>
-      </h4>
-      <p>
-        <%= t ".view_on_map" %>  |   <%= location.reviews.count %> <%= t ".reviews" %>
-      </p>
-      <% if params %>
-        <%= link_to t(".view"), location_path(location, params.permit(q: {})), class: "price-btn" %>
-      <% else %>
-        <%= link_to t(".view"), location_path(location), class: "price-btn" %>
-      <% end %>
+    <div class="col-lg-7">
+      <div class="details">
+        <h4 class="d-flex justify-content-between">
+          <span class="d-flex">
+            <%= location.name %>
+            <div class="d-flex pb-3 ml-1" id="stars_<%= location.id %>">
+            </div>
+          </span>
+          <div class="badge badge-warning">
+            <h4><span><%= location.total_rate %></span></h4>
+          </div>
+        </h4>
+        <span class="pull-left"><%= location.address %> </span>
+        <span class="pull-right"><%= location.reviews.count %> <%= t ".reviews" %></span>
+        <table class="table">
+          <thead>
+            <tr>
+              <th><%= t ".room_name" %></th>
+              <th><%= t ".occupancy_limit" %></th>
+              <th><%= t ".quantity" %></th>
+              <th><%= t ".price" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% location.rooms.each do |room| %>
+              <tr>
+              <td><%= link_to room.name, location_room_path(location, room) %></td>
+              <td><%= room.occupancy_limit %></td>
+              <td><%= room.quantity %></td>
+              <td>$<%= room.price %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <span class="pull-right">
+          <% if params %>
+            <%= link_to t(".see_availability"), location_path(location, params.permit(q: {})), class: "genric-btn info" %>
+          <% else %>
+            <%= link_to t(".see_availability"), location_path(location), class: "genric-btn info" %>
+          <% end %>
+        </span>
+      </div>
     </div>
   </div>
 </div>

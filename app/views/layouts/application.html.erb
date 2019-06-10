@@ -3,17 +3,15 @@
   <head>
     <%= render "layouts/meta" %>
     <title><%= full_title yield(:title) %></title>
+    <%= render "layouts/js" %>
     <%= render "layouts/style" %>
   </head>
 
   <body>
     <%= render "layouts/header" %>
     <%= render "layouts/banner" %>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
     <%= yield %>
     <%= render "layouts/footer" %>
-    <%= render "layouts/js" %>
+    <%= render "layouts/alert" %>
   </body>
 </html>

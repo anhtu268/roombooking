@@ -1,34 +1,21 @@
-<section class="button-area pt-4">
+<%= render "static_pages/search" %>
+<section class="destinations-area section-gap">
+  <div class="container">
     <div class="row d-flex justify-content-center">
-      <div class="col-7 ">
-        <%= render "static_pages/search_home", path: search_home_locations_path, fields: Settings.search_fields.location_home %>
-      </div>
+        <div class="menu-content pb-40 col-lg-8">
+            <div class="title text-center">
+                <h1 class="mb-10"><%= t ".popular_destinations" %></h1>
+                <p><%= t ".we_all" %></p>
+            </div>
+        </div>
     </div>
-    <br>
-
-    <div class="text-center">
-      <h2><%= t ".just_for_the_weekend" %></h2>
-      <p><%= t ".discover_new_inspiring_places_close_to_home." %></p>
-    </div>
-
-    <br>
-
-      <%= render "static_pages/list_location" %>
-      <%= paginate @locations %>
-    <br>
-      <%= render "static_pages/location_type" %>
-    <br>
-
-    <div class="text-center">
-      <h2><%= t ".explore_the_world" %></h2>
-      <p><%= t ".see_what_peopel" %></p>
-    </div>
-
-    <br>
-
-    <div class="row d-flex justify-content-center mb-4">
+    <div class="row mb-4">
       <%= render "static_pages/location" %>
     </div>
-    <%= content_tag :div, nil, id: "mydata", data: {location: @locations} %>
-    <%= javascript_include_tag "list_location" %>
+  </div>
+</section>
+<section class="button-area pt-4">
+  <div class="container">
+    <%= render "static_pages/location_type" %>
+  </div>
 </section>

@@ -1,0 +1,28 @@
+<%= search_form_for @search do |f| %>
+  <div class="d-flex flex-column">
+    <%= button_tag t(".filter"), class: "genric-btn info m-1" %>
+    <div id="slider-range" class="m-1"></div>
+    <%= f.text_field :rooms_price_gteq, class: "single-input-primary m-1" %>
+    <%= f.text_field :rooms_price_lteq, class: "single-input-primary   m-1" %>
+    <div class="form-select m-1" id="default-select2">
+      <%= f.select :rooms_occupancy_limit_gteq, Settings.static_pages.search_home.occupancy_limit, prompt: t(".occupancy_limits"), class: "nice-select " %>
+    </div>
+    <div class="form-select m-1" id="default-select2">
+      <%= f.select :rooms_living_room_gteq, Settings.static_pages.search_home.living_room, prompt: t(".livingrooms"), class: "nice-select " %>
+    </div>
+    <div class="form-select m-1" id="default-select2">
+      <%= f.select :rooms_bed_room_gteq, Settings.static_pages.search_home.bed_room, prompt: t(".bedrooms"), class: "nice-select " %>
+    </div>
+    <div class="form-select m-1" id="default-select2">
+      <%= f.select :rooms_bath_room_gteq, Settings.static_pages.search_home.bath_room, prompt: t(".bathrooms"), class: "nice-select " %>
+    </div>
+    <div class="form-select m-1" id="default-select2">
+      <%= f.select :total_rate_gteq, Settings.static_pages.search_home.total_rate, prompt: t(".star_rating"), class: "nice-select " %>
+    </div>
+  </div>
+  <% if params[:q] %>
+    <% params[:q].each do |key,value| %>
+      <%= hidden_field_tag key, value %>
+    <% end %>
+  <% end %>
+<% end %>

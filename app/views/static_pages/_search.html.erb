@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row align-items-center justify-content-center">
       <div class="col-12 mt-10">
-        <%= search_form_for @search, url: locations_path(params.permit(q: {})), class: "d-flex" do |f| %>
+        <%= search_form_for @search, url: locations_path, class: "d-flex" do |f| %>
           <%= f.search_field :national_or_address_cont, placeholder: t(".location"),
             class: "single-input-primary m-1" %>
           <%= search_field_tag "q[have_rooms_fit_with][range]", nil, class: "single-input-primary m-1 daterange", required: true %>
@@ -10,11 +10,6 @@
             in: 1..30, required: true %>
           <%= number_field_tag "q[have_rooms_fit_with][rooms]", nil, class: "single-input-primary m-1", placeholder: t(".no_rooms"),
             in: 1..30, required: true %>
-          <% if params[:q] %>
-            <% params[:q].each do |key,value| %>
-              <%= hidden_field_tag key, value %>
-            <% end %>
-          <% end %>
           <%= f.submit "search", class: "genric-btn primary" %>
         <% end %>
       </div>

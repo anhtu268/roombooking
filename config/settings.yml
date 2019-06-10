@@ -50,7 +50,7 @@ controllers:
     pag: 9
   static_pages:
     page: 9
-    limit_location: 3
+    limit_location: 6
 
 manager:
   rooms:

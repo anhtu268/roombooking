@@ -1,0 +1,21 @@
+<%= provide :js, "bills" %>
+<section class="sample-text-area">
+  <div class="container">
+    <h3 class="text-heading">My Bill</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Location</th>
+          <th>Total pirce</th>
+          <th>Book at</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render "bills/bill" %>
+      </tbody>
+    </table>
+    <% paginate @bills %>
+  </div>
+</section>

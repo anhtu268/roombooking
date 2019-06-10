@@ -12,19 +12,19 @@ class ReservationDetail < ApplicationRecord
   validate :valid_room_ready
 
   def valid_start_date
-    errors.add(:start_date, t("reservation_details.model.valid_start_date")) unless start_date >= Time.now
+    errors.add(:start_date, I18n.t("reservation_details.model.valid_start_date")) unless start_date >= Time.now
   end
 
   def valid_end_date
-    errors.add(:end_date, t("reservation_details.model.valid_end_date")) unless end_date >= Time.now
+    errors.add(:end_date, I18n.t("reservation_details.model.valid_end_date")) unless end_date >= Time.now
   end
 
   def valid_days
-    errors.add(:end_date, t("reservation_details.model.valid_days")) if end_date == start_date
+    errors.add(:end_date, I18n.t("reservation_details.model.valid_days")) if end_date == start_date
   end
 
   def valid_room_ready
-    errors.add(:room_id, t("reservation_details.model.valid_room_ready")) if (size_between_time(start_date, end_date) >= room.quantity)
+    errors.add(:room_id, I18n.t("reservation_details.model.valid_room_ready")) if (size_between_time(start_date, end_date) >= room.quantity)
   end
 
   private

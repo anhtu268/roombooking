@@ -28,8 +28,8 @@
 //= require i18n/translations
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require cable
+//= require toastr
 //= require jquery.raty
 //= require home.js
 //= require moment
@@ -38,3 +38,5 @@
 //= require search.js
 //= require raphael
 //= require morris
+//= require toastr
+toastr.options.positionClass = 'toast-top-left';

@@ -1,12 +1,7 @@
 <% if object.errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-danger">
-      <%= t ".the_form_contains" %> <%= object.errors.size %> error.
-    </div>
-    <ul>
+  <script type="text/javascript">
     <% object.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      toastr.error('<%= msg %>');
     <% end %>
-    </ul>
-  </div>
+  </script>
 <% end %>

@@ -33,5 +33,6 @@
 //= require i18n/translations
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require cable
+//= require toastr
+toastr.options.positionClass = 'toast-bottom-left';

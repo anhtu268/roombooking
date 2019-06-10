@@ -3,6 +3,7 @@
   <head>
     <%= render "layouts/manager/meta" %>
     <title><%= full_title yield(:title) %></title>
+    <%= render "layouts/manager/js" %>
     <%= render "layouts/manager/style" %>
   </head>
 
@@ -19,6 +20,6 @@
         </div>
       </div>
     </div>
-    <%= render "layouts/manager/js" %>
+    <%= render "layouts/manager/alert" %>
   </body>
 </html>

@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
     @book_room = BookRoom.new(reservations_params, current_user).book
     if @book_room[:reservation].errors.empty? && @book_room[:detail].errors.empty?
       flash[:success] = t ".created"
-      redirect_to request.referer
+      redirect_to bill_path(@book_room[:reservation])
     else
       @reservation = @book_room[:reservation]
       @reservation_detail = @book_room[:detail]

@@ -1,0 +1,9 @@
+<% @bills.each do |bill| %>
+  <tr>
+    <td><%= link_to bill.id, bill_path(bill) %></td>
+    <td><%= bill.location.name %></td>
+    <td><%= humanized_money_with_symbol bill.total_bill %></td>
+    <td><%= bill.created_at %></td>
+    <td><%= label_tag nil, bill.status_tag[:name], class: bill.status_tag[:class] %></td>
+  </tr>
+<% end %>

@@ -20,13 +20,16 @@
         </div>
         <nav id="nav-menu-container">
           <ul class="nav-menu">
-            <li><%= link_to t(".home"), "#" %></li>
-            <li><%= link_to t(".accommodations"), "#" %></li>
+            <li><%= link_to t(".home"), root_path %></li>
+            <li><%= link_to t(".accommodations"), locations_path %></li>
             <% if user_signed_in? %>
+              <% if current_user.admin? %>
+                <li><%= link_to "Admin", admin_root_path %></li>
+              <% end %>
               <li><%= link_to t(".host"), manager_root_path %></li>
               <li class="menu-has-children"><%= link_to t(".account"), "#" %>
                 <ul>
-                  <li><%= link_to t(".profile"), "#" %></li>
+                  <li><%= link_to "My Bills", bills_path %></li>
                   <li><%= link_to t(".change_pass"), edit_user_registration_path %></li>
                   <li><%= link_to t(".sign_out"), sign_out_path, method: :delete %></li>
                 </ul>

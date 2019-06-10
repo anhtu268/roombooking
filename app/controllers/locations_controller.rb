@@ -4,7 +4,6 @@ class LocationsController < ApplicationController
   def index
     @search = ransack_params
     @locations = ransack_result
-    @locations = LocationDecorator.decorate @locations
   end
 
   def show; end
@@ -22,12 +21,12 @@ class LocationsController < ApplicationController
   end
 
   def ransack_result
-    if params[:q]
+    if params[:q] && params[:q][:have_rooms_fit_with]
       Kaminari.paginate_array(@search.result.have_rooms_fit_with(params[:q][:have_rooms_fit_with]))
-        .page(params[:page]).per Settings.controllers.locations.pag
+        .page(params[:page]).per(Settings.controllers.locations.pag)
     else
       @search.result.order(total_rate: :desc)
-        .page(params[:page]).per Settings.controllers.locations.pag
+        .page(params[:page]).per(Settings.controllers.locations.pag)
     end
   end
 end

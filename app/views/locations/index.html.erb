@@ -1,17 +1,20 @@
 <%= render "locations/search" %>
-<section class="destinations-area section-gap">
+<section class="button-area pt-4">
   <div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="menu-content pb-40 col-lg-8">
-            <div class="title text-center">
-                <h1 class="mb-10"><%= t ".popular_destinations" %></h1>
-                <p><%= t ".we_all" %></p>
-            </div>
+    <div class="row align-items-top justify-content-center">
+      <div class="col-3 mb-4">
+        <%= render "locations/search_home", path: search_home_locations_path, fields: Settings.search_fields.location_home %>
+      </div>
+      <div class="col-9 mb-4">
+        <div class="text-center">
+          <h2><%= t ".just_for_the_weekend" %></h2>
+          <p><%= t ".discover_new_inspiring_places_close_to_home." %></p>
         </div>
+        <%= render @locations %>
+        <%= paginate @locations %>
+      </div>
     </div>
-    <div class="row mb-4">
-      <%= render @locations %>
-    </div>
-    <%= paginate @locations %>
   </div>
 </section>
+<%= content_tag :div, nil, id: "mydata", data: {location: @locations} %>
+<%= javascript_include_tag "list_location" %>

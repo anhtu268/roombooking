@@ -429,10 +429,26 @@ en:
       start: "Start"
       end: "End"
       number: :Number
+      see_availability: "See availability >"
     search:
       location: "Where are you going ?"
       no_peoples: "Number of peoples"
       no_rooms: "Number of rooms you want"
+    search_home:
+      where_are_you_going: "Where are you going ?"
+      start_date: "Start Date"
+      end_date: "End Date"
+      filter: "Filter"
+      price_range: "Price range:"
+      min_price: "Min Price:"
+      max_price: "Max Price:"
+      occupancy_limits: "Occupancy limits"
+      livingrooms: "Livingrooms"
+      bedrooms: "Bedrooms"
+      bathrooms: "Bathrooms"
+      star_rating: "Star Rating"
+      stay_type: "Stay type"
+
   reviews:
     form:
       create: "Create"
@@ -493,24 +509,24 @@ en:
       berlin: "Berlin"
       explore_the_world: "Explore the world"
       see_what_peopel: "See what peopel are travelling, all around the world."
-    search_home:
-      where_are_you_going: "Where are you going ?"
-      start_date: "Start Date"
-      end_date: "End Date"
-      search: "Search"
-      price_range: "Price range:"
-      min_price: "Min Price:"
-      max_price: "Max Price:"
-      occupancy_limits: "Occupancy limits"
-      livingrooms: "Livingrooms"
-      bedrooms: "Bedrooms"
-      bathrooms: "Bathrooms"
-      star_rating: "Star Rating"
-      stay_type: "Stay type"
-    location_type:
-      whatever_accommodations: "Whatever accommodations you’re looking for, we've got them..."
-    list_location:
-      see_availability: "See availability >"
+      popular_destinations: "Popular Destinations"
+      we_all: "We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to."
+    search:
+      location: "Where are you going ?"
+      no_peoples: "Number of peoples"
+      no_rooms: "Number of rooms you want"
+    location:
+      view_on_map: "View on map"
+      reviews: "Reviews"
+      description: "Description"
+      rooms: "Rooms"
+      room_name: "Type"
+      occupancy_limit: "Guests"
+      quantity: "Quantity"
+      price: "Price"
+      start: "Start"
+      end: "End"
+      number: :Number
 
   javascripts:
     locations:

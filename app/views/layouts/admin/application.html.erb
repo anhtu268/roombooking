@@ -3,6 +3,7 @@
   <head>
     <%= render "layouts/admin/meta" %>
     <title><%= full_title yield(:title) %></title>
+    <%= render "layouts/admin/js" %>
     <%= render "layouts/admin/style" %>
   </head>
 
@@ -13,15 +14,12 @@
         <%= render "layouts/admin/sidebar" %>
         <div class="main-panel">
           <div class="content-wrapper">
-            <% flash.each do |message_type, message| %>
-              <div class="alert alert-<%= message_type %>"><%= message %></div>
-            <% end %>
             <%= yield %>
           </div>
           <%= render "layouts/admin/footer" %>
         </div>
       </div>
     </div>
-    <%= render "layouts/admin/js" %>
+    <%= render "layouts/admin/alert" %>
   </body>
 </html>

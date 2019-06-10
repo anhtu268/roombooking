@@ -1,0 +1,30 @@
+<%= provide :js, "bills" %>
+<section class="sample-text-area">
+  <div class="container">
+    <h3 class="text-heading">My Bill</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Room</th>
+          <th>Check in</th>
+          <th>Check out</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bill_details.each do |bill_detail| %>
+          <tr>
+            <td><%= bill_detail.room.name %></td>
+            <td><%= bill_detail.start_date %></td>
+            <td><%= bill_detail.end_date %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-between typography">
+      <% if @bill.status == 0 %>
+        <%= link_to "Pay", pay_bill_path(@bill), method: :post, class: "genric-btn primary" %>
+      <% end %>
+      <h2>Total: <%= humanized_money_with_symbol @bill.total_bill %> USD</h2>
+    </div>
+  </div>
+</section>

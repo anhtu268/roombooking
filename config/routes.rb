@@ -32,6 +32,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :bills, only: %i(index show) do
+    post "pay", on: :member, to: "bills#pay"
+  end
+
   resources :location_types, only: %i(show)
 
   namespace :admin do
